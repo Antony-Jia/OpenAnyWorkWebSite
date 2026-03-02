@@ -1,5 +1,61 @@
 # OpenAnyWork Website
 
+English | [中文](#chinese)
+
+OpenAnyWork official promotional website — a pure static frontend that can be deployed directly without any build steps.
+
+## Project Structure
+
+```
+OpenAnyWorkWebSite/
+├── index.html              # Main page entry
+├── .gitignore              # Git ignore configuration
+├── README.md               # This file
+│
+├── assets/                 # Static assets
+│   └── mainpage.png        # Homepage hero screenshot
+│
+├── css/                    # Stylesheets
+│   └── style.css           # Global styles (dark theme, animations, responsive layout)
+│
+├── js/                     # Scripts
+│   ├── i18n.js             # Internationalization (Chinese/English toggle)
+│   └── main.js             # Page interaction logic (scroll animation, carousel, etc.)
+│
+└── doc/                    # Documentation
+    ├── README.md           # English documentation
+    └── README.zh-CN.md     # Chinese documentation
+```
+
+## Quick Start
+
+Open `index.html` directly in your browser, or serve it via any static server:
+
+```bash
+# Preview locally with Python
+python -m http.server 8080
+
+# Serve with Node.js
+npx serve .
+```
+
+## Features
+
+- 🌐 **Bilingual (EN/ZH)** — Toggle between English and Chinese via the button in the top-right corner
+- 🎠 **Auto Carousel** — Testimonials section scrolls seamlessly and automatically
+- ✨ **Scroll Animations** — Elements fade in as they enter the viewport
+- 📱 **Responsive Layout** — Optimized for both desktop and mobile devices
+
+## Deployment
+
+This is a pure static website. Deploy it directly to GitHub Pages, Vercel, Netlify, or any static hosting platform.
+
+---
+
+<a name="chinese"></a>
+
+[English](#) | 中文
+
 OpenAnyWork 官方宣传网站，纯静态前端，无需构建步骤即可直接部署。
 
 ## 项目结构
