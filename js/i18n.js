@@ -127,7 +127,19 @@ const i18nData = {
     }
 };
 
-let currentLang = localStorage.getItem('openwork_lang') || 'en';
+// Smart language detection
+function getInitialLanguage() {
+    const saved = localStorage.getItem('openwork_lang');
+    if (saved) return saved;
+
+    const browserLang = navigator.language || navigator.userLanguage;
+    if (browserLang.startsWith('zh')) return 'zh';
+    if (browserLang.startsWith('en')) return 'en';
+
+    return 'zh'; // Fallback to Chinese if no clear preference
+}
+
+let currentLang = getInitialLanguage();
 
 function updateContent() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
