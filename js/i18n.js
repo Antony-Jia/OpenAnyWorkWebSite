@@ -129,14 +129,20 @@ const i18nData = {
 
 // Smart language detection
 function getInitialLanguage() {
+    // 1. Check saved preference
     const saved = localStorage.getItem('openwork_lang');
-    if (saved) return saved;
+    if (saved) {
+        if (saved.startsWith('zh')) return 'zh';
+        if (saved.startsWith('en')) return 'en';
+    }
 
-    const browserLang = navigator.language || navigator.userLanguage;
+    // 2. Check browser language
+    const browserLang = navigator.language || navigator.userLanguage || '';
     if (browserLang.startsWith('zh')) return 'zh';
     if (browserLang.startsWith('en')) return 'en';
 
-    return 'zh'; // Fallback to Chinese if no clear preference
+    // 3. Default fallback
+    return 'zh';
 }
 
 let currentLang = getInitialLanguage();
