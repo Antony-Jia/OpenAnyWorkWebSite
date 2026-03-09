@@ -29,4 +29,40 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.style.boxShadow = 'none';
         }
     });
+
+    // Hero Carousel Rotation
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    if (carouselItems.length > 0) {
+        let currentIndex = 0;
+
+        function rotateCarousel() {
+            carouselItems.forEach(item => item.classList.remove('active', 'prev', 'next'));
+            carouselItems[currentIndex].classList.add('active');
+
+            const prevIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+            const nextIndex = (currentIndex + 1) % carouselItems.length;
+
+            carouselItems[prevIndex].classList.add('prev');
+            carouselItems[nextIndex].classList.add('next');
+        }
+
+        let carouselInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % carouselItems.length;
+            rotateCarousel();
+        }, 5000);
+
+        carouselItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                if (!item.classList.contains('active')) {
+                    currentIndex = index;
+                    rotateCarousel();
+                    clearInterval(carouselInterval);
+                    carouselInterval = setInterval(() => {
+                        currentIndex = (currentIndex + 1) % carouselItems.length;
+                        rotateCarousel();
+                    }, 5000);
+                }
+            });
+        });
+    }
 });
