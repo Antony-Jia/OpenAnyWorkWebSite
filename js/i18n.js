@@ -145,7 +145,7 @@ function getInitialLanguage() {
     return 'zh';
 }
 
-let currentLang = getInitialLanguage();
+let currentLang = 'zh';
 
 function updateContent() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
