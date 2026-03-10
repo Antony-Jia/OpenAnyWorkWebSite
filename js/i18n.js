@@ -72,7 +72,9 @@ const i18nData = {
         navContrib: "Contributing",
         mitLicense: "MIT License",
         footerLink: "View on GitHub",
-        builtWith: "Built for true AI automation"
+        builtWith: "Built for true AI automation",
+        icpFiling: "辽ICP备2026002887号",
+        securityFiling: "辽公网安备21010302666881号"
     },
     zh: {
         title: "OpenAnyWork<br>你身边的 AI Agent管家",
@@ -147,7 +149,9 @@ const i18nData = {
         navContrib: "贡献指南",
         mitLicense: "MIT 许可证",
         footerLink: "在 GitHub 上查看",
-        builtWith: "为真正的 AI 自动化而生"
+        builtWith: "为真正的 AI 自动化而生",
+        icpFiling: "辽ICP备2026002887号",
+        securityFiling: "辽公网安备21010302666881号"
     }
 };
 
